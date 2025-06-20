@@ -1,0 +1,13 @@
+Compound Problems:
+
+House Robber
+
+	- Skills: DP array design, state transition, base cases
+
+Coin Change (Min Coins)
+
+	- Skills: Bottom-up tabulation, recurrence logic
+
+Subsets / Permutations (Backtracking)
+
+	- Skills: Recursion with path building, pruning

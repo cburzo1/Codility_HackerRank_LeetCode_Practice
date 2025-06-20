@@ -1,0 +1,13 @@
+Compound Problems:
+
+First Unique Character in a String
+
+	- Skills: Hashmaps, frequency counting, string traversal
+
+Subarray Sum Equals K
+
+	- Skills: Prefix sums, hashmap optimization
+
+String Compression / Expansion
+
+	- Skills: Two pointers, loop control, character logic

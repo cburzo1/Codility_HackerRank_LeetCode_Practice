@@ -1,0 +1,13 @@
+Compound Problems:
+
+Binary Tree Level Order Traversal
+
+	- Skills: BFS template, queue operations
+
+Lowest Common Ancestor of a Binary Tree
+
+	- Skills: Recursive traversal, tree node tracking
+
+Number of Islands
+
+	- Skills: DFS/BFS in 2D matrix, visited tracking
