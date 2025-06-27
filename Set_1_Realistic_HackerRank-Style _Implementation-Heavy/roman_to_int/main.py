@@ -51,4 +51,37 @@ def roman_to_int(s):
 
     return total
 
-print(roman_to_int("MCM"))
+print(roman_to_int("IIII"))
+
+'''
+Main Take Aways: 
+- my_dict = {"A": 1, "B": 2}
+
+# This will crash
+print(my_dict["C"])  # KeyError
+
+# This will return None
+print(my_dict.get("C"))  # None
+
+# This will return -1 as default
+print(my_dict.get("C", -1))  # -1
+💡 When to Use Which:
+Use ro_in[s[i]] when you are sure the key exists.
+
+Use ro_in.get(s[i]) if the key might be missing, and you want to avoid a crash.
+
+- ❌ "IIII" is not a valid Roman numeral by classical Roman rules.
+✅ Why It’s Sometimes Allowed in Code:
+Many coding problems do not validate strict Roman formatting. They only:
+
+Convert based on symbol values (e.g., I = 1, so IIII = 4)
+
+Allow leniency for ease of parsing
+
+But in real-world or historical use, IIII would be considered invalid.
+
+- When performing a running total and you want to do additional calculations next 
+to just total += total, those calculations are treated as if they are in parenthesis. 
+As a result, if you want to keep a correct running total, you will need to skip some 
+elements so they dont get recalculated
+'''
