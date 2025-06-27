@@ -42,13 +42,13 @@ def add_digits(num):
         return num
 
     while len(s) > 1:
+        s = str(num)
         s2 = list(s)
         total = 0
         for i in range(0, len(s2)):
             total = total + int(s2[i])
 
         num = total
-        s = str(num)
 
     return num
 
