@@ -48,7 +48,7 @@ class Tree:
 
         return self.root
 
-    def preorder(self, p, val):
+    '''def preorder(self, p, val):
         if p.data == val and p.data is not None:
             return
 
@@ -57,11 +57,52 @@ class Tree:
             self.list_t.append(p.data)
 
         self.preorder(p.lc, val)
-        self.preorder(p.rc, val)
+        self.preorder(p.rc, val)'''
 
     def lowest_common_ancestor(self, t, p, q):
+        # Get path to p
+        self.list_t = []
         self.preorder(t, p)
-        print(self.list_t)
+        path_p = list(self.list_t)  # Make a copy
+
+        # Get path to q
+        self.list_t = []
+        self.preorder(t, q)
+        path_q = list(self.list_t)  # Make a copy
+
+        # Compare paths to find lowest common ancestor
+        lca = None
+        for i in range(min(len(path_p), len(path_q))):
+            if path_p[i] == path_q[i]:
+                lca = path_p[i]
+            else:
+                break
+
+        return lca
+
+    def preorder(self, p, val):
+        if p is None:
+            return False
+
+        self.list_t.append(p.data)
+        print(p.data, end=" ")
+
+        if p.data == val:
+            return True
+
+        # Try left
+        b = self.preorder(p.lc, val)
+        if b is True:
+            return True
+
+        # Try right
+        b = self.preorder(p.rc, val)
+        if b is True:
+            return True
+
+        # If neither worked, backtrack
+        self.list_t.pop()
+        return False
 
 tree = Tree()
 
