@@ -1,4 +1,6 @@
-'''def string_compression(s):
+'''
+MY ATTEMPT:
+def string_compression_CLP(s):
 
     s1 = list(s)
     count = 0
@@ -39,6 +41,10 @@ print(string_compression("aabcccccaaa"))
 
 '''
 Main Take Aways: 
+
+- Python concept: "if s[i] != s[i - 1] and s[i - 1] is not None:", if i starts at 0 and you access
+s[i - 1], then it accesses the last element similar to s[-1]
+
 - Tracking Runs / Groups in a Sequence
 Core idea: identify and process consecutive identical elements.
 
