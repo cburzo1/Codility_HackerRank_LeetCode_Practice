@@ -35,8 +35,37 @@ def sum_equals_k(nums, k):
     return nums_count
 '''
 
+def sum_equals_k(nums, k):
+    prefix_counts = {0: 1}  # We’ve seen sum 0 once (important!)
+    prefix_sum = 0
+    count = 0
+
+    for num in nums:
+        prefix_sum += num
+        diff = prefix_sum - k
+
+        if diff in prefix_counts:
+            count += prefix_counts[diff]
+
+        # Handle new or existing prefix_sum keys
+        if prefix_sum in prefix_counts:
+            prefix_counts[prefix_sum] += 1
+        else:
+            prefix_counts[prefix_sum] = 1
+
+    return count
+
 print(sum_equals_k([1, 1, 1], 2))
 print(sum_equals_k([1, 2, 3], 3))
 print(sum_equals_k([1, -1, 1, 1, 1], 2))
 print(sum_equals_k([-1, -1, -1], -2))
 print(sum_equals_k([3, 4, 7, 2, -3, 1, 4, 2],7))
+
+'''
+Main Take Aways: 
+
+- prefix sum with two pointers only works for positive integers; this works for negative and positive
+
+- Brute force might be too slow for some test cases, so the optimal solution should be the one that
+is focused on the most
+'''
