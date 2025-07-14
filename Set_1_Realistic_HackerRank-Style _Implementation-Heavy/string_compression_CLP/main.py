@@ -1,4 +1,22 @@
 '''
+SET 1
+🧩 2. String Compression
+Problem Statement:
+
+Given an array of characters chars, compress it in place. The length after compression must always be less than or equal to the original array.
+
+Every group of consecutive repeating characters should be replaced with the character followed by the number of repetitions. Only return the new length of the compressed array.
+
+You must modify the input array in-place with O(1) extra space.
+
+Constraints:
+
+1 <= chars.length <= 2000
+
+chars[i] is a lowercase English letter, uppercase English letter, or a digit.
+'''
+
+'''
 MY ATTEMPT:
 def string_compression_CLP(s):
 

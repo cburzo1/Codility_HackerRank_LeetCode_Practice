@@ -1,3 +1,17 @@
+'''
+SET 1
+🧩 1. First Unique Character in a String
+Problem Statement:
+
+Given a string s, return the index of the first non-repeating character in it. If there is no such character, return -1.
+
+Constraints:
+
+1 <= s.length <= 10^5
+
+s consists of only lowercase English letters.
+'''
+
 def first_unique_character_in_a_string(s):
     dict_s = {}
     s_l = list(s)
