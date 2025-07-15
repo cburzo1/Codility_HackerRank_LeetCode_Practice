@@ -1,3 +1,26 @@
+'''
+SET 2
+🧩 Problem: Lowest Common Ancestor of a Binary Tree
+Problem Statement
+Given a binary tree, find the lowest common ancestor (LCA) of two given nodes p and q.
+
+The lowest common ancestor is defined as:
+
+“The lowest node in the tree that has both p and q as descendants.”
+(A node can be a descendant of itself.)
+
+📦 Constraints
+The number of nodes in the tree is in the range [2, 10⁵]
+
+-10⁹ <= Node.val <= 10⁹
+
+All Node.val values are unique
+
+Both p and q will exist in the tree
+
+The tree is not necessarily a Binary Search Tree (important!)
+'''
+
 class Node:
     def __init__(self, val):
         self.data = val
@@ -109,5 +132,8 @@ Main Take Aways:
 
 - Creating an external Que for level-order tree creation
 
-- 
+- Finding the path from root to a desired id
+
+- in recursion, returning false when an id is not found and then when the root is found, bubble up while
+returning true
 '''
