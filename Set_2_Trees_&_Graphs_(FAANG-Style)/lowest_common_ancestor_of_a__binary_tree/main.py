@@ -48,17 +48,6 @@ class Tree:
 
         return self.root
 
-    '''def preorder(self, p, val):
-        if p.data == val and p.data is not None:
-            return
-
-        if p.data is not None:
-            print(p.data, end=" ")
-            self.list_t.append(p.data)
-
-        self.preorder(p.lc, val)
-        self.preorder(p.rc, val)'''
-
     def lowest_common_ancestor(self, t, p, q):
         # Get path to p
         self.list_t = []
@@ -106,16 +95,19 @@ class Tree:
 
 tree = Tree()
 
-#tree.add_to_tree(5)
-#tree.add_to_tree(2)
-
 t = 0
 arr = [3, 5, 1, 6, 2, 0, 8, None, None, 7, 4]
 
 for i in range(0, len(arr)):
     t = tree.add_to_tree(arr[i])
 
-
-#tree.inorder(t)
-
 tree.lowest_common_ancestor(t, 6, 4)
+
+'''
+Main Take Aways: 
+- Building a binary tree in python
+
+- Creating an external Que for level-order tree creation
+
+- 
+'''
