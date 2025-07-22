@@ -77,6 +77,36 @@ class Tree:
         return self.root
 
     def binary_tree_lot(self, bt):
+        if bt is None:
+            return []
+
+        q = Que()
+        q.enq(bt)
+
+        arr_m = []
+
+        while len(q.Q) > 0:
+            size = len(q.Q)         # number of nodes at this level
+            arr_n = []
+
+            for _ in range(size):   # process one level at a time
+                p = q.dq()
+                arr_n.append(p.data)
+
+                if p.lc is not None:
+                    q.enq(p.lc)
+
+                if p.rc is not None:
+                    q.enq(p.rc)
+
+            arr_m.append(arr_n)
+
+        return arr_m
+
+'''
+MY ATTEMPT:
+
+    def binary_tree_lot(self, bt):
 
         if bt.lc is None and bt.rc is None:
             return [bt.data]
@@ -103,29 +133,7 @@ class Tree:
             arr_m.append(arr_n)
 
         return arr_m
-
-        '''if self.root is None:
-            self.root = node
-            return self.root
-
-        que = Que()
-        que.enq(self.root)
-
-        while len(que.Q) > 0:
-            p = que.dq()
-            if p.lc is not None:
-                que.enq(p.lc)
-            else:
-                p.lc = node
-                break
-
-            if p.rc is not None:
-                que.enq(p.rc)
-            else:
-                p.rc = node
-                break
-
-        return self.root'''
+'''
 
 tree = Tree()
 
@@ -136,3 +144,9 @@ for i in range(0, len(arr)):
     t = tree.add_to_tree(arr[i])
 
 print(tree.binary_tree_lot(t))
+
+'''
+Main Take Aways: 
+
+- 
+'''
