@@ -116,3 +116,72 @@ def text_justification(words, max_width):
 
 
 print(text_justification(["This", "is", "an", "example", "of", "text", "justification."], 16))
+
+'''
+MAIN TAKEAWAYS:
+
+- Context Recap:
+We’ve already:
+
+Chosen a group of words (line_words) to go on the current line.
+
+Determined how many spaces we need to add between these words to make the line exactly max_width characters.
+
+Now we want to distribute those spaces evenly, with any leftovers going left to right among the gaps.
+
+🎯 Goal:
+For a line of multiple words (not the last line), we want to:
+
+Spread all the remaining space characters between words, as evenly as possible.
+Extra spaces (if total space doesn't divide evenly) go starting from the left.
+
+🧠 Variables Explained:
+python
+Copy
+Edit
+space_slots = num_words - 1
+even_space = num_spaces // space_slots
+extra = num_spaces % space_slots
+Let’s say:
+You have 4 words: ["what", "must", "be", "acknowledgment"]
+
+And max_width = 30
+
+So the number of letters = 4 + 4 + 2 + 14 = 24
+
+Total space to insert = 30 - 24 = 6
+
+Number of space slots = 4 - 1 = 3 (between the 4 words)
+
+Step-by-Step Math:
+even_space = num_spaces // space_slots
+6 // 3 = 2
+➤ Each slot gets at least 2 spaces.
+
+extra = num_spaces % space_slots
+6 % 3 = 0
+➤ No "leftover" spaces, so they all divide evenly.
+
+Now let’s do a case with leftover:
+
+Words = ["Science", "is", "what", "we", "understand", "well"]
+
+max_width = 30
+
+Letter length = 7 + 2 + 4 + 2 + 10 + 4 = 29
+
+So we only have 1 space to insert!
+
+Space slots = 6 - 1 = 5
+
+even_space = 1 // 5 = 0
+
+extra = 1 % 5 = 1
+
+So:
+
+The first gap (between "Science" and "is") gets 1 space
+
+The rest get 0 spaces
+
+'''
