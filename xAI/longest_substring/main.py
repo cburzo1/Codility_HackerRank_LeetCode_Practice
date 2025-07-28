@@ -1,23 +1,45 @@
-def longest_substring(s):
-
+'''def longest_substring(s):
     s_l = list(s)
-
     count = 0
-
-    mX = 0
+    biggest = 0
+    aux_a = []
 
     for i in range(0, len(s_l)):
-        for j in range(i + 1, len(s_l)):
-            if s_l[i] == s_l[j]:
-                count = 0
-                break
-            else:
-                count += 1
+        if s_l[i] not in aux_a:
+            aux_a.append(s_l[i])
+            count += 1
+        else:
+            aux_a.pop(aux_a.index(s_l[i]))
+            count = 0
 
-            if count > mX:
-                mX = count
+        if count > biggest:
+            biggest = count
 
-    return mX
+    return biggest'''
 
+def longest_substring(s):
+    s_l = list(s)
+    count = 0
+    biggest = 0
+    aux_a = []
+
+    for i in range(len(s_l)):
+        if s_l[i] not in aux_a:
+            aux_a.append(s_l[i])
+            count += 1
+        else:
+            # Remove up to and including the first occurrence of the repeated character
+            repeat_index = aux_a.index(s_l[i])
+            aux_a = aux_a[repeat_index + 1:] + [s_l[i]]
+            count = len(aux_a)
+
+        if count > biggest:
+            biggest = count
+
+    return biggest
 
 print(longest_substring("abcabcbb"))
+print(longest_substring("bbbb"))
+print(longest_substring("pwwkew"))
+print(longest_substring("abccba"))
+print(longest_substring("aabcbcbb"))
