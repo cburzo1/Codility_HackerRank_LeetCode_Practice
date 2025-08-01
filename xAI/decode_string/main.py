@@ -50,3 +50,10 @@ print(decode_string("2[ab]3[cd]"))       # ababcddcd
 print(decode_string("2[ab]c3[d]"))       # ababcddd
 print(decode_string("10[x]y"))           # xxxxxxxxxxy
 print(decode_string("2[hello]world"))
+
+'''
+MAIN TAKEAWAYS:
+
+- .isdigit(), .isalpha() to identify strings
+- Apply stack pattern for openeing and closing brackets
+'''
