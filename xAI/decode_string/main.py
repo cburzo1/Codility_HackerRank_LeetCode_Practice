@@ -40,12 +40,12 @@ def decode_string(s):
 
     return s3
 
-'''print(decode_string("3[a]2[bc]"))
+print(decode_string("3[a]2[bc]"))
 print(decode_string("3[a2[c]]"))
 print(decode_string("2[abc]3[cd]ef"))
 print(decode_string("10[z]"))
 print(decode_string("3[x]2[]1[y]"))
-print(decode_string("4[mn]1[o]"))'''
+print(decode_string("4[mn]1[o]"))
 print(decode_string("2[ab]3[cd]"))       # ababcddcd
 print(decode_string("2[ab]c3[d]"))       # ababcddd
 print(decode_string("10[x]y"))           # xxxxxxxxxxy

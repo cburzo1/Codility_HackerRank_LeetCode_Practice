@@ -1,25 +1,40 @@
 def decode_string(s):
     s_l = list(s)
-    stk = []
+    stack = []
+
+    curr_num = 0
+    curr_str = ""
 
     for i in range(0, len(s_l)):
-        if s_l[i] == "]":
-            t_s = ""
-            s_e = stk.pop()
-            while s_e != "[":
-                t_s += s_e
-                s_e = stk.pop()
+        char = s_l[i]
 
-            print(t_s[::-1])
+        if char.isdigit():
+            curr_num = curr_num * 10 + int(char)
 
-            print(stk)
+        elif char == "[":
+            # Push current string and number to stack
+            stack.append(curr_str)
+            stack.append(curr_num)
+            # Reset current string and number
+            curr_str = ""
+            curr_num = 0
+
+        elif char == "]":
+            # Pop number and previous string
+            num = stack.pop()
+            prev_str = stack.pop()
+            # Repeat current string and append to previous
+            curr_str = prev_str + curr_str * num
 
         else:
-            stk.append(s_l[i])
+            # It's a character
+            curr_str += char
+
+    return curr_str
 
 print(decode_string("3[a]2[bc]")) # "aaabcbc"
-#print(decode_string("3[a2[c]]")) # "accaccacc"
-#print(decode_string("2[abc]3[cd]ef")) # "abcabccdcdcdef"
-#print(decode_string("10[a]")) # "aaaaaaaaaa"
-#print(decode_string("")) # ""
-#print(decode_string("2[]")) # ""
+print(decode_string("3[a2[c]]")) # "accaccacc"
+print(decode_string("2[abc]3[cd]ef")) # "abcabccdcdcdef"
+print(decode_string("10[a]")) # "aaaaaaaaaa"
+print(decode_string("")) # ""
+print(decode_string("2[]")) # ""
