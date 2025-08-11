@@ -6,11 +6,11 @@ def first_duplicate(a):
 
     dict_a = {}
 
-    for i in range(0, len(a)):
-        for i in range(len(a)):
-            if a[i] in dict_a:
-                return a[i]
-            dict_a[a[i]] = i
+    for i in range(len(a)):
+        if a[i] in dict_a:
+            return a[i]
+
+        dict_a[a[i]] = i
         '''if a[i] not in dict_a:
             dict_a[a[i]] = i
 
