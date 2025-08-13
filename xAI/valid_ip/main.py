@@ -1,7 +1,7 @@
 import re
 
 def valid_ip(s):
-    s2 = re.findall(r'\.', s)
+    s2 = re.findall(r'[.]', s)
 
     print(s2)
 
