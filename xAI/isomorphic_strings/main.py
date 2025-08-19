@@ -7,7 +7,7 @@ All occurrences of a character must be replaced with another character while pre
 No two characters may map to the same character, but a character may map to itself.
 '''
 
-'''def isomorphic_strings(s, t):
+def isomorphic_strings(s, t):
     s_l = list(s)
     t_l = list(t)
 
@@ -64,9 +64,9 @@ No two characters may map to the same character, but a character may map to itse
     if m_t != m_s:
         return False
 
-    return flag'''
+    return flag
 
-def isomorphic_strings(s, t):
+'''def isomorphic_strings(s, t):
     if len(s) != len(t):
         return False
 
@@ -82,7 +82,7 @@ def isomorphic_strings(s, t):
         elif mapping[sc] != tc:
             return False
 
-    return True
+    return True'''
 
 print(isomorphic_strings("egg", "add")) #True
 print(isomorphic_strings("foo", "bar")) # False

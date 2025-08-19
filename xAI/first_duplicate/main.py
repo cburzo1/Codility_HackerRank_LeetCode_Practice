@@ -7,15 +7,11 @@ def first_duplicate(a):
     dict_a = {}
 
     for i in range(len(a)):
-        if a[i] in dict_a:
-            return a[i]
-
-        dict_a[a[i]] = i
-        '''if a[i] not in dict_a:
+        if a[i] not in dict_a:
             dict_a[a[i]] = i
 
         if a[i] in dict_a and dict_a.get(a[i]) < i:
-            return a[dict_a.get(a[i])]'''
+            return a[dict_a.get(a[i])]
 
     return -1
 
